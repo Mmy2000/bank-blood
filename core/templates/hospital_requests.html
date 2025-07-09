@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Hospital Requests</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Blood Type</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>Quantity</th>
+                <th>Fulfilled</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in object_list %}
+            <tr>
+                <td>{{ request.blood_type }}</td>
+                <td>{{ request.city }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.quantity }}</td>
+                <td>{{ request.fulfilled }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
