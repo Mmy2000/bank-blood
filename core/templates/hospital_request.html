@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+{% load django_bootstrap5 %}
 {% block content %}
     <h2>Hospital Blood Request</h2>
-    <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit" class="btn btn-danger">Submit Request</button></form>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        
+        {% bootstrap_button button_type="submit" content="Submit Request" %}
+    </form>
 {% endblock %}

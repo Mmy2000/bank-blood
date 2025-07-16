@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load django_bootstrap5 %}
+
 {% block title %}
     Donation
 {% endblock title %}
@@ -7,5 +9,10 @@
 {% block content %}
     <h2>New Donation</h2>
     {% if messages %}{% for message in messages %}<div class="alert alert-{{ message.tags }}">{{ message }}</div>{% endfor %}{% endif %}
-    <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit" class="btn btn-success">Submit Donation</button></form>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        
+        {% bootstrap_button button_type="submit" content="Submit Donation" %}
+    </form>
 {% endblock %}

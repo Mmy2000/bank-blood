@@ -6,6 +6,7 @@ class DonorForm(forms.ModelForm):
     class Meta:
         model = Donor
         fields = ["national_id", "name", "city", "email"]
+        
 
 
 class DonationForm(forms.Form):
